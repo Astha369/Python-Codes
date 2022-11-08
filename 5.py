@@ -32,3 +32,13 @@
 # (2) You do not have to accept input from the user or print the output to the console. You just have to write the function definition.
 
 def get_summary(trans):
+    summary = list()
+    for T in trans:
+        D = {'TID': T['TID']}
+        val = 0
+        for item in T['Items']:
+            val = val + item['Price'] * item['Qty']
+        D['Cost'] = val
+        summary.append(D)
+    return summary
+        
